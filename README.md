@@ -1,9 +1,9 @@
 # Lister
 *"Everybody's a textfile, Dave"*
 
-**Lister** is a small, lightweight, .NET recreation of the 'ls'/'gci'/'dir' command from your OS/shell of choice.
+**Lister** is a small, lightweight, .NET recreation of the ls/gci/dir command from your OS/shell of choice.
 
-Very un-featureful (currently only has two flags), **Lister** is designed for speed, efficiency and compatibility.
+Very un-featureful (currently only has two flags), **Lister** is designed for speed, efficiency, and compatibility.
 
 Originally designed for me to use with my NeoVim plugin - [Porthole.nvim](https://github.com/Ash-Olorenshaw/Porthole.nvim) - I've actually used **Lister** in 
 a number of settings just because I like that extra 100 or so ms it shaves off a query.
