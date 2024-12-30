@@ -8,8 +8,7 @@ Very un-featureful (currently only has two flags), **Lister** is designed for sp
 Originally designed for me to use with my NeoVim plugin - [Porthole.nvim](https://github.com/Ash-Olorenshaw/Porthole.nvim) - I've actually used **Lister** in 
 a number of settings just because I like that extra 100 or so ms it shaves off a query.
 
-> ⚠️ **Note: Lister is not always faster than other options.** On higher end systems I have noticed it perform worse by 40 or so ms (not really noticeable in my
-> opinion, but still worse). Lister best performs on lower-end systems for some reason - I don't fully understand why, but that's the way it works...
+> ⚠️ **Note: Lister is not always faster than other options.** Lister's performance varies based on your hardware, shell of choice, etc. However, Lister is very consistent. On low end systems it tends to be considerably faster. However, on high end systems it *will* be slower than things like `ls` and `gci`, but the speed difference is usually so minimal that it is not noticeable.
 
 ## Usage
 
@@ -18,6 +17,12 @@ a number of settings just because I like that extra 100 or so ms it shaves off a
 ```
 [lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-h/--help]
 ```
+
+If you are on Linux, to ensure that Wine doesn't try to run the application, make sure you run the program like this:
+```nu-script
+dotnet lister.dll ./examplefolder -f
+```
+with `dotnet` prepended to the command. You can easily alias this in your shell of choice to make it more simple to use
 
 ## Building
 
