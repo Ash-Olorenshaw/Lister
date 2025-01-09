@@ -12,7 +12,21 @@ a number of settings just because I like that extra 100 or so ms it shaves off a
 
 ## Usage
 
-**Lister**'s usage is as follows:
+**Lister** is built on .NET (8) - if you don't have it installed, do the following:
+```nu-script
+# Ubuntu
+sudo apt update
+sudo apt install dotnet8
+
+# Fedora
+sudo dnf update
+sudo dnf install dotnet
+
+# Windows
+winget install Microsoft.DotNet.DesktopRuntime.9
+```
+
+After .NET is installed, **Lister**'s usage is as follows:
 
 ```
 [lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-h/--help]
