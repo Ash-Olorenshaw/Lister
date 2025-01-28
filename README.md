@@ -12,12 +12,8 @@ a number of settings just because I like that extra 100 or so ms it shaves off a
 
 ## Usage
 
-**Lister** is built on .NET (8) - if you don't have it installed, do the following:
+**Lister** is built on .NET (9) - if you don't have it installed, do the following:
 ```nu-script
-# Ubuntu
-sudo apt update
-sudo apt install dotnet8
-
 # Fedora
 sudo dnf update
 sudo dnf install dotnet
@@ -25,6 +21,7 @@ sudo dnf install dotnet
 # Windows
 winget install Microsoft.DotNet.DesktopRuntime.9
 ```
+(For Ubuntu, or any other Linux distro, follow these instructions [here](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu))
 
 After .NET is installed, **Lister**'s usage is as follows:
 
@@ -34,7 +31,7 @@ After .NET is installed, **Lister**'s usage is as follows:
 
 If you are on Linux, to ensure that Wine doesn't try to run the application, make sure you run the program like this:
 ```nu-script
-dotnet lister.dll ./examplefolder -f
+dotnet lister.dll ./examplefolder
 ```
 with `dotnet` prepended to the command. You can easily alias this in your shell of choice to make it more simple to use
 
