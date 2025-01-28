@@ -17,6 +17,9 @@ let listDirs(path : string) =
     |> Array.map Path.GetFileName
     |> Array.iter (printfn "%s")
 
+let assignIcon(item : string) = 
+    0
+
 
 [<EntryPoint>]
 let main(args) = 
@@ -30,7 +33,7 @@ let main(args) =
         if Array.contains "-f" args || Array.contains "--files" args then
             listFiles args[0]
 
-        else if not <| Array.contains "-d" args && Array.contains "--directories" args then
+        else
             listDirs args[0]
             listFiles args[0]
 
