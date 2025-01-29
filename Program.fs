@@ -33,7 +33,7 @@ let main(args) =
         if Array.contains "-f" args || Array.contains "--files" args then
             listFiles args[0]
 
-        else
+        else if not <| Array.contains "-d" args && not <| Array.contains "--directories" args then
             listDirs args[0]
             listFiles args[0]
 
