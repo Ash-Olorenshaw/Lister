@@ -6,7 +6,7 @@ module lister
 
 open System.IO
 
-let explanation = "[lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-c/--coloured/--colored] [-i/--ignore] [-h/--help]"
+let explanation = "[Lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-c/--coloured/--colored] [-i/--ignore] [-h/--help]"
 
 let listFiles (path : string) (ignore : bool) = 
     Directory.GetFiles(path)

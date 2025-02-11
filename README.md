@@ -26,7 +26,7 @@ winget install Microsoft.DotNet.DesktopRuntime.9
 After .NET is installed, **Lister**'s usage is as follows:
 
 ```
-[lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-c/--coloured/--colored] [-i/--ignore] [-h/--help]
+[Lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-c/--coloured/--colored] [-i/--ignore] [-h/--help]
 ```
 
 On all platforms, make sure you run the program with `dotnet` prepended to the command like this:
@@ -38,7 +38,7 @@ This is to stop Linux trying to run it with Wine and Windows complaining that it
 You can easily alias this in your shell of choice to make it more simple to use like this:
 
 ```pwsh
-# PowerShell
+# PowerShell - in your $PROFILE
 function RunLister {
 	dotnet "/path/to/your/lister/install/Lister.dll" @args
 }
@@ -46,7 +46,7 @@ function RunLister {
 Set-Alias -Name lister -Value RunLister
 ```
 ```bash
-# Bash
+# Bash - in your .bashrc
 function RunLister {
     dotnet "/path/to/your/lister/install/Lister.dll" "$@"
 }
