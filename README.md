@@ -35,7 +35,7 @@ dotnet lister.dll ./examplefolder
 ```
 This is to stop Linux trying to run it with Wine and Windows complaining that it's a system element. 
 
-You can easily alias this in your shell of choice to make it more simple to use like this:
+You can easily alias this in your shell of choice like this:
 
 ```pwsh
 # PowerShell - in your $PROFILE
