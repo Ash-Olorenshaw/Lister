@@ -3,10 +3,10 @@
 
 **Lister** is a small, lightweight, .NET recreation of the ls/gci/dir command from your OS/shell of choice.
 
-Very un-featureful (currently only has two flags), **Lister** is designed for speed, efficiency, and compatibility.
+Very un-featureful (currently only has four meaningful flags), **Lister** is designed for compatibility, speed, and efficiency.
 
 Originally designed for me to use with my NeoVim plugin - [Porthole.nvim](https://github.com/Ash-Olorenshaw/Porthole.nvim) - I've actually used **Lister** in 
-a number of settings just because I like that extra 100 or so ms it shaves off a query.
+a number of settings just because I like that extra 100 or so ms it shaves off a query on low end hardware.
 
 > ⚠️ **Note: Lister is not always faster than other options.** Lister's performance varies based on your hardware, shell of choice, etc. However, Lister is very consistent. On low end systems it tends to be considerably faster. However, on high end systems it *will* be slower than things like `ls` and `gci`, but the speed difference is usually so minimal that it is not noticeable.
 
@@ -26,14 +26,33 @@ winget install Microsoft.DotNet.DesktopRuntime.9
 After .NET is installed, **Lister**'s usage is as follows:
 
 ```
-[lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-h/--help]
+[lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-c/--coloured/--colored] [-i/--ignore] [-h/--help]
 ```
 
-If you are on Linux, to ensure that Wine doesn't try to run the application, make sure you run the program like this:
+On all platforms, make sure you run the program with `dotnet` prepended to the command like this:
 ```nu-script
 dotnet lister.dll ./examplefolder
 ```
-with `dotnet` prepended to the command. You can easily alias this in your shell of choice to make it more simple to use
+This is to stop Linux trying to run it with Wine and Windows complaining that it's a system element. 
+
+You can easily alias this in your shell of choice to make it more simple to use like this:
+
+```pwsh
+# PowerShell
+function RunLister {
+	dotnet "/path/to/your/lister/install/Lister.dll" @args
+}
+
+Set-Alias -Name lister -Value RunLister
+```
+```bash
+# Bash
+function RunLister {
+    dotnet "/path/to/your/lister/install/Lister.dll" "$@"
+}
+
+alias lister=RunLister
+```
 
 ## Building
 
@@ -53,4 +72,4 @@ dotnet restore
 dotnet publish -o ./releases/
 ```
 
-All you need out of the 'releases' folder then is usually just `FSharp.Core.dll`, `Lister.dll` and `Lister.deps.json`.
+All you need out of the 'releases' folder then is usually just `FSharp.Core.dll`, `Lister.dll` and `Lister.runtimeconfig.json`.
