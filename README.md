@@ -48,7 +48,7 @@ Set-Alias -Name lister -Value RunLister
 ```bash
 # Bash - in your .bashrc
 function RunLister {
-    dotnet "/path/to/your/lister/install/Lister.dll" "$@"
+	dotnet "/path/to/your/lister/install/Lister.dll" "$@"
 }
 
 alias lister=RunLister
