@@ -8,11 +8,11 @@ open System.IO
 
 let explanation = "[Lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-c/--coloured/--colored] [-i/--ignore] [-h/--help]"
 
-let listFiles (path : string) (ignore : bool) = 
+let listFiles (path : string) (ignoreHidden : bool) = 
     Directory.GetFiles(path)
     |> Array.map Path.GetFileName
     |> Array.choose (fun file ->
-        if not <| ignore then
+        if not <| ignoreHidden then
             if not (file[0] = '.') then
                 Some(file)
             else
@@ -28,11 +28,11 @@ let colourFile (file : string) (dir : bool) =
     else
         file
 
-let listDirs(path : string) (colourDir : bool) (ignore : bool) = 
+let listDirs(path : string) (colourDir : bool) (ignoreHidden : bool) = 
     Directory.GetDirectories(path)
     |> Array.map Path.GetFileName
     |> Array.choose (fun dir ->
-        if not <| ignore then
+        if not <| ignoreHidden then
             if not (dir[0] = '.') then
                 Some(dir)
             else
