@@ -9,16 +9,16 @@ open System.IO
 let explanation = "[Lister.dll] REQUIRED: [<filepath>] OPTIONAL: [-d/--directories] [-f/--files] [-c/--coloured/--colored] [-i/--ignore] [-h/--help]"
 
 let listFiles (path : string) (ignoreHidden : bool) = 
-    Directory.GetFiles(path)
+    Directory.GetFiles path
     |> Array.map Path.GetFileName
     |> Array.choose (fun file ->
         if not <| ignoreHidden then
             if not (file[0] = '.') then
-                Some(file)
+                Some file
             else
                 None
         else
-            Some(file)
+            Some file
         )
     |> Array.iter (printfn "%s")
 
@@ -29,16 +29,16 @@ let colourFile (file : string) (dir : bool) =
         file
 
 let listDirs(path : string) (colourDir : bool) (ignoreHidden : bool) = 
-    Directory.GetDirectories(path)
+    Directory.GetDirectories path
     |> Array.map Path.GetFileName
     |> Array.choose (fun dir ->
         if not <| ignoreHidden then
             if not (dir[0] = '.') then
-                Some(dir)
+                Some dir
             else
                 None
         else
-            Some(dir)
+            Some dir
     )
     |> Array.map (fun dir -> 
         if colourDir then
@@ -55,7 +55,7 @@ let arrayContainsFlags (flag : string, altFlag : string) (targetArray : array<st
         false
 
 [<EntryPoint>]
-let main(args) = 
+let main args = 
     if arrayContainsFlags ("-h", "--help") args then
         printfn $"\n\tLister\n\"Everybody's a textfile, Dave\"\n\n{explanation}"
 
