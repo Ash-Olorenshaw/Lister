@@ -12,17 +12,17 @@ a number of settings just because I like that extra 100 or so ms it shaves off a
 
 ## Usage
 
-**Lister** is built on .NET (9) - if you don't have it installed, do the following:
+**Lister** is built on .NET (10) - if you don't have it installed, do the following:
 ```nu-script
 # Windows
-winget install Microsoft.DotNet.DesktopRuntime.9
+winget install Microsoft.DotNet.DesktopRuntime.10
 
 # Fedora
-sudo dnf install dotnet-runtime-9.0 -y
+sudo dnf install dotnet-runtime-10.0 -y
 
 # Ubuntu
 sudo apt-get update
-sudo apt-get install dotnet-runtime-9.0 -y
+sudo apt-get install dotnet-runtime-10.0 -y
 ```
 For MacOS check out [this](https://learn.microsoft.com/en-us/dotnet/core/install/macos) page. For other Linux distros, follow these instructions [here](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu).
 
